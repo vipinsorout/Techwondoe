@@ -1,0 +1,71 @@
+- Project setup
+ 
+ mysql server install & up & running 
+
+ add mysql details in config file
+
+
+#run commands
+  npm install
+  
+  npm run build
+
+  npm run start
+
+
+Api details
+#getToken
+  - METHOD:POST
+  - endpoint:/gettoken
+  - header
+        password:value
+   body:
+   {
+	"username":"vipin"
+   }
+#addUser
+  - METHOD:POST
+endpoint:/user
+body:
+{
+	"username":"vipin",
+	"password":"123456"
+}
+#create company
+  - METHOD:POST
+  - endpoint:/company
+   header:
+        token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkNWMxMmY2NC1kMTE4LTQyYmYtYTE2YS0yMTc4YTc5MWNlMTUiLCJ1c2VybmFtZSI6InZpcGluIiwiaWF0IjoxNjQ3ODgwNDMwLCJleHAiOjE2NDc4ODQwMzB9.qme9Npsuwv37Bh7e6UaMk3zoXPF755pFmhasVKLa6IU
+   post object:
+    {
+	"name":"Zomato pvt ltd",
+	"address":"Sarita vihar,delhi",
+	"ceo":"vipin kumar sorout",
+	"date":"10/12/1992"
+    }
+
+#search by company
+  - METHOD:GET
+ - endpoint:/company/:name
+      header:
+  token:value 
+#get company by id
+  - METHOD:GET
+ - endpoint: company/:id
+    header:
+    token:detail
+#create team
+  - METHOD:POST
+  
+  endpoint
+    header:/company/:companyId/team
+  token:value
+  body:
+  {
+      "leadName":"value"
+  }
+#get all teams
+  - METHOD:GET
+  endpoint:/team
+  header:
+  token:value
